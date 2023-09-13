@@ -1,0 +1,6 @@
+go 1.21.0
+
+use ./todos-api
+use ./todos-analytics
+use ./kafka
+use ./common
