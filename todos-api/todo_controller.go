@@ -10,10 +10,9 @@ import (
 )
 
 type TodoController struct {
-	todoRepo *repository.TodoRepo
+	todoRepo      *repository.TodoRepo
 	todoAnalytics *services.TodoAnalytics
 }
-
 
 type TodoCreateRequest struct {
 	models.TodoItem
@@ -33,9 +32,8 @@ func (t *TodoController) addTodos(c *fiber.Ctx) error {
 		log.Println(err)
 	}
 
-	t.todoRepo.CreateTodo(todoCR.TodoItem)
-	t.todoAnalytics.PublishCreatedTodo(&todoCR.TodoItem)
+	t.todoRepo.CreateTodo(c.UserContext(), todoCR.TodoItem)
+	go t.todoAnalytics.PublishCreatedTodo(&todoCR.TodoItem)
 	c.Status(200).JSON(todoCR)
-
 	return nil
 }
