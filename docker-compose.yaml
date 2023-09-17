@@ -54,3 +54,8 @@ services:
     entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
     depends_on:
       - broker
+
+  zipkin-server:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
