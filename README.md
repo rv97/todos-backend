@@ -26,6 +26,7 @@ Follow these steps to get the **todos-backend** up and running:
 - Kafka: [Installation Guide](https://kafka.apache.org/quickstart)
 - Kowl: [Installation Guide](https://github.com/cloudhut/kowl)
 - k6: [Installation Guide](https://k6.io/docs/getting-started/installation/)
+- **OpenTelemetry**: OpenTelemetry is used for tracing and monitoring. You can find installation instructions and documentation [here](https://opentelemetry.io/docs/go/getting-started/).
 
 ### Installation
 
